@@ -1,0 +1,28 @@
+* {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  border: 1px solid #ddd;
+  background-color: rgb(201, 199, 197);
+  margin-bottom: 10px;
+  padding: 10px;
+}
+h2 {
+  color: rgb(7, 7, 7);
+}
+.imagem {
+  height: 100px ;
+  width: 200px ;
+}
+li#description {
+  background-color: rgb(201, 199, 197);
+  height: 246px ;
+  width: 545px ;
+}
