@@ -1,5 +1,5 @@
 {
-  "name": "node-express",
+  "name": "ProvaPPI2",
   "version": "1.0.0",
   "main": "src/index.js",
   "license": "MIT",
@@ -10,7 +10,9 @@
     "axios": "^1.3.5",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "jsonwebtoken": "^9.0.0",
     "mongodb": "^5.2.0",
+    "mysql2": "^3.3.3",
     "react-router-dom": "^6.10.0"
   },
   "devDependencies": {
