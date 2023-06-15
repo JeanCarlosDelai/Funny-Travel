@@ -32,16 +32,15 @@ const Travel = ({
           <TravelInfo icon={<CgDollar />} text={price} />
         </div>
       </header>
-
       <div className='content'>
         {/* <Image /> */}
         <div className="image-container" style={{ width: '400px', height: '300px' }}>
           <img className="image" src={image} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         </div>
-        <div className='content-center'>
+        <div className='content'>
           <TravelInfo icon={<AiFillCaretRight />} text={description} />
         </div>
-        <div className='content-center'>
+        <div className='content'>
           <TravelInfo icon={<AiFillCaretRight />} text={characteristics} />
         </div>
 

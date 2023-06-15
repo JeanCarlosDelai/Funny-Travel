@@ -38,11 +38,11 @@ const Travel = ({
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
         </div>
-        <div className="content-center">
+        <div className="content">
           {/* Image HERE <TravelInfo icon={<FaBriefcase />} number={price} /> */}
           <TravelInfo icon={<AiFillCaretRight />} text={description} />
         </div>
-        <div className="content-center">
+        <div className="content">
           <TravelInfo icon={<AiFillCaretRight />} text={characteristics} />
         </div>
       </div>
