@@ -2,8 +2,6 @@ import { Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import { BadRequestError, UnauthenticatedError } from '../errors';
 import User from '../models/User';
-import { v2 as cloudinary } from 'cloudinary';
-import fs from 'fs';
 
 const register = async (req: Request, res: Response) => {
   const user = await User.create({ ...req.body });
@@ -87,18 +85,5 @@ const updateUser = async (req: any, res: Response) => {
   });
 }
 
-const uploadProductImage = async (req: any, res: Response) => {
-
-  const result = await cloudinary.uploader.upload(
-    req.files.image.tempFilePath,
-    {
-      use_filename: true,
-      folder: 'funnytravel',
-    }
-  );
-  fs.unlinkSync(req.files.image.tempFilePath);
-  return res.status(StatusCodes.OK).json({ image: { src: result.secure_url } });
-}
-
-export { register, login, updateUser, uploadProductImage };
+export { register, login, updateUser };
 

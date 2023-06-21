@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000;
 
 const start = async () => {
     try {
-        await sequelize.sync(); // Sincroniza os modelos com o banco de dados
+        await sequelize.sync();
 
         app.listen(port, () =>
             console.log(`Server is listening on port ${port}...`)

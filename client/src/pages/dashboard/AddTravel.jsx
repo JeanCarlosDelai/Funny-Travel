@@ -82,7 +82,7 @@ const AddTravel = () => {
   };
 
   const handleImageUpload = async (name, imageFile) => {
-    const url = "http://localhost:3000/api/v1/auth";
+    const url = "http://localhost:3000/travel";
     const formData = new FormData();
     formData.append("image", imageFile);
 

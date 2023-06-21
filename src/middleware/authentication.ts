@@ -29,13 +29,5 @@ const authenticateUser: any = async (req: CustomRequest, res: Response, next: Ne
   }
 };
 
-const checkAdminRole = (req: CustomRequest, res: Response, next: NextFunction) => {
-  // Verifica se o usuário tem a role de "admin"
-  if (req.user.role === 'admin') {
-    next(); // Permite o acesso à próxima função de middleware ou rota
-  } else {
-    throw new UnauthenticatedError('Acesso negado. Somente o Admin pode efetuar essas ações!');
-  }
-};
 
-export { authenticateUser, checkAdminRole, CustomRequest };
+export default authenticateUser;

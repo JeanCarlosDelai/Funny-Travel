@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "funny_travel",
+    "database": "funny travel",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

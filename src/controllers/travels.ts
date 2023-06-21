@@ -3,6 +3,8 @@ import { Op } from 'sequelize';
 import { StatusCodes } from 'http-status-codes';
 import { BadRequestError, NotFoundError, UnauthenticatedError } from '../errors';
 import Travel from '../models/Travel';
+import { v2 as cloudinary } from 'cloudinary';
+import fs from 'fs';
 
 interface CustomRequest extends Request {
   user: {
@@ -182,11 +184,25 @@ const deleteTravel = async (req: CustomRequest, res: Response) => {
   res.status(StatusCodes.OK).send();
 };
 
+const uploadProductImage = async (req: any, res: Response) => {
+
+  const result = await cloudinary.uploader.upload(
+    req.files.image.tempFilePath,
+    {
+      use_filename: true,
+      folder: 'funnytravel',
+    }
+  );
+  fs.unlinkSync(req.files.image.tempFilePath);
+  return res.status(StatusCodes.OK).json({ image: { src: result.secure_url } });
+}
+
 export {
   createTravel,
   deleteTravel,
   getAllTravels,
   updateTravel,
   getTravel,
-  getAllTravelsAllPeoples
+  getAllTravelsAllPeoples,
+  uploadProductImage
 };
