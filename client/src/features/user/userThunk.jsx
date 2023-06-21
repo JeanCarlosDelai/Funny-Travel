@@ -2,6 +2,8 @@ import customFetch, { checkForUnauthorizedResponse } from '../../utils/axios';
 import { clearAllTravelsState } from '../allTravels/allTravelsSlice';
 import { clearValues } from '../travel/travelSlice';
 import { logoutUser } from './userSlice';
+
+//Funções assíncronas que realizam chamas a API
 export const registerUserThunk = async (url, user, thunkAPI) => {
   try {
     const resp = await customFetch.post(url, user);

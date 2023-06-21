@@ -2,7 +2,7 @@ import { Sequelize } from 'sequelize';
 import User from '../models/User';
 import Travel from '../models/Travel';
 
-const sequelize = new Sequelize('funny travel', 'root', '', {
+const sequelize = new Sequelize('funny_travel', 'root', '', {
   host: 'localhost',
   dialect: 'mysql',
 });

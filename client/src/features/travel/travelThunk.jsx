@@ -15,7 +15,7 @@ export const deleteTravelThunk = async (travelId, thunkAPI) => {
   thunkAPI.dispatch(showLoading());
   try {
     const resp = await customFetch.delete(`/travel/${travelId}`);
-    thunkAPI.dispatch(getAllTravels()); // Ajustar
+    thunkAPI.dispatch(getAllTravels());
     return resp.data.msg;
   } catch (error) {
     thunkAPI.dispatch(hideLoading());

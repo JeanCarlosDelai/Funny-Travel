@@ -41,6 +41,8 @@ const travelSlice = createSlice({
       return { ...state, isEditing: true, ...payload };
     },
   },
+
+  // Manipuladores de ações assíncronas
   extraReducers: (builder) => {
     builder
       .addCase(createTravel.pending, (state) => {

@@ -12,12 +12,14 @@ import {
   clearStoreThunk,
 } from './userThunk';
 
+//É um objeto que representa o estado inicial do slice.
 const initialState = {
   isLoading: false,
   isSidebarOpen: false,
   user: getUserFromLocalStorage(),
 };
 
+//É uma função que cria ações assíncronas para o Redux.
 export const registerUser = createAsyncThunk(
   'user/registerUser',
   async (user, thunkAPI) => {
@@ -57,7 +59,7 @@ const userSlice = createSlice({
       }
     },
   },
-
+ // Manipuladores de ações assíncronas
   extraReducers: {
     [registerUser.pending]: (state) => {
       state.isLoading = true;

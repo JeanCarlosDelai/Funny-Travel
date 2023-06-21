@@ -11,3 +11,10 @@ export const getUserFromLocalStorage = () => {
   const user = result ? JSON.parse(result) : null;
   return user;
 };
+
+export const getRoleFromLocalStorage = () => {
+  const result = localStorage.getItem('user');
+  const user = result ? JSON.parse(result) : null;
+  const role = user.role
+  return role;
+};

@@ -1,12 +1,20 @@
 import { NavLink } from 'react-router-dom';
-import links from '../utils/links';
+import { linksUser, linksAdmin } from '../utils/links';
+import {getRoleFromLocalStorage} from '../utils/localStorage'
 
-const NavLinks = ({ toggleSidebar, email }) => {
-  const userLinks = links(email);
-
-  return (
+const NavLinks = ({ toggleSidebar}) => {
+  const role = getRoleFromLocalStorage()
+  let baseLinks;
+  if(role !== 'admin') {
+    baseLinks = linksUser();
+  }else{
+    baseLinks = linksAdmin();
+  }
+  
+    return (
     <div className='nav-links'>
-      {userLinks.map((link) => {
+      {
+      baseLinks.map((link) => {
         const { text, path, id, icon } = link;
         return (
           <NavLink

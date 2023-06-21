@@ -3,7 +3,15 @@ import { MdOutlineTravelExplore } from "react-icons/md";
 import { FaWpforms } from "react-icons/fa";
 import { ImProfile } from "react-icons/im";
 
-const links = (email) => {
+const linksUser = () => {
+  const baseLinks = [
+    { id: 1, text: "Todas as Viagens", path: "/", icon: <IoBarChartSharp /> },
+    { id: 4, text: "Perfil", path: "profile", icon: <ImProfile /> },
+  ];
+  return baseLinks;
+};
+
+const linksAdmin = () => {
   const baseLinks = [
     { id: 1, text: "Todas as Viagens", path: "/", icon: <IoBarChartSharp /> },
     {
@@ -20,17 +28,7 @@ const links = (email) => {
     },
     { id: 4, text: "Perfil", path: "profile", icon: <ImProfile /> },
   ];
-
-  // Verificar permissão do usuário para acessar "Todas as Viagens" (path "/")
-  let userLinks = baseLinks;
-
-  if (email !== "admin@admin.com" && email !== "admin2@admin.com") {
-    userLinks = baseLinks.filter(
-      (link) => link.path === "/" || link.path === "profile"
-    );
-  }
-
-  return userLinks;
+  return baseLinks;
 };
 
-export default links;
+export {linksUser, linksAdmin};
